@@ -208,6 +208,47 @@ def create_matrix(size:int = 3,up_fill: int = 0, down_fill:int = 0):
 print(create_matrix(size=4, up_fill=7, down_fill=9))
 
 
+'''Обход вложенных списков'''
+x = [1, [57, [12, 36], 78], 2, [3, 4, [5, 6, [7, 8], [9, 10]], [11, 12]], [13, 14], 15]
+def f(spisok, level=1):
+    print(*spisok, '- level = ', level)
+    for i in spisok:
+        if type(i) == list:
+            f(i, level + 1)
+print(f(x))
+
+
+""" треугольник паскаля """
+n = 4 #int(input('количество уровней: '))
+treygolnik =[]
+for i in range(n+1):
+    treygolnik.append([1]+[0]*n) # создаём таблицу
+for i in treygolnik:
+    print(i)
+# [1, 0, 0, 0, 0]
+# [1, 0, 0, 0, 0]
+# [1, 0, 0, 0, 0]
+# [1, 0, 0, 0, 0]
+# [1, 0, 0, 0, 0]
+print('-----------------------------------------------------')
+
+n = 4 #int(input('количество уровней: '))
+treygolnik =[]
+for i in range(n+1):
+    treygolnik.append([1]+[0]*n) # создаём таблицу
+
+for i in range(1,n+1): # перебираем строки
+    for j in range(1,n+1): # перебираем столбцы
+        treygolnik[i][j] = treygolnik[i-1][j]+treygolnik[i-1][j-1]
+
+for i in range(n+1):
+    for j in range(i+1):
+        print(treygolnik[i][j], end=' ')
+# 1
+# 1 1
+# 1 2 1
+# 1 3 3 1
+# 1 4 6 4 1
 
 
 

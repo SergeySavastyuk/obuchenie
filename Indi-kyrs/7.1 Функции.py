@@ -1,7 +1,22 @@
 """ примеры функций """
 
+
+def fun_2(c,d,a=3,b=7,**e): # функция с параметрами, сначала позиционные, потом по умолчанию параметры
+    return a+b+c+d, e
+print(fun_2(2,4,e=50)) #аргумент задается сразу
+'''c и d - позиционные аргументы
+a и b - аргументы по умолчанию
+е - именные аргументы'''
+#fun_2(int(input(':')),int(input(':')))  # или спрашивается
+print('-'*50)
+
 function = lambda x:print(f'{x} говорит hello world!')
 function('Ivan')
+print('-'*50)
+
+list1 = [i for i in range(11)]#  создадим список из диапазона
+print(list(filter(lambda x:x%2==0,list1))) # отфильтруем через лямдо-функцию чётные числа из списка list1 и вернём список
+print(lambda x:x%2==0, list1) # -> <function <lambda> at 0x00000000026D6790> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print('-'*50)
 
 def summa_n(t):
@@ -47,3 +62,11 @@ def caesar_cipher(text: str, step: int) -> str:
     """Шифр цезаря"""
     return ''.join(shift_letter(i, step) if i.isalpha() else i for i in text)
 
+'''Обход вложенных списков'''
+x = [1, [57, [12, 36], 78], 2, [3, 4, [5, 6, [7, 8], [9, 10]], [11, 12]], [13, 14], 15]
+def f(spisok, level=1):
+    print(*spisok, '- level = ', level)
+    for i in spisok:
+        if type(i) == list:
+            f(i, level + 1)
+print(f(x))
