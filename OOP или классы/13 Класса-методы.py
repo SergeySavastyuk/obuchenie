@@ -7,7 +7,7 @@ class Example:
     def hello(self):
         print('hello')
 
-    @staticmethod  # к статическому методу можно обращаться через класс и через экземпляр,
+    @staticmethod  # статический метод это метод к которому можно обратиться не только через класс, но и через экземпляр
     # так же он нужен, чтобы не выносить функцию из класса
     def static_hello():
         print('static_hello')
@@ -21,6 +21,7 @@ a = Example()
 a.hello()
 a.static_hello()
 Example.static_hello()
+print('-'*60)
 a.class_hello()
 Example.class_hello()
 

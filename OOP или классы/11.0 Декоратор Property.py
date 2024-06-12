@@ -5,14 +5,15 @@ class BankAccount:
         self.name = name
         self.__balance = balance
 
-    # my_balance = property(my_balance) # наш метод получения значения через property() стал свойством класса (т.е декораторатом)
+    # создадим свойство my_balance
+    # my_balance = property(fget=my_balance) # наш метод получения значения через property() стал свойством класса (т.е декораторатом)
     @property
     def my_balance(self): # теперь это уже не метод, а свойство
         print('get_balance')
         return self.__balance
     # my_property_balance = my_balance # дабы не потерять свойство (которое выше), сохраним в другую переменную
 
-    @my_balance.setter # таким образом вызываем наше свойство и у него вызываем метод setter
+    @my_balance.setter # это my_balance = property(fset=my_balance) таким образом вызываем наше свойство и у него вызываем метод setter
     def my_balance(self,value): # теперь это уже не метод с таким же именем, а свойство
                                 # и теперь к этой функции нельзя будет обратиться извне
         if not isinstance(value,(int,float)):
@@ -20,7 +21,7 @@ class BankAccount:
         print(f"set_balance {value}")
         self.__balance = value
 
-    @my_balance.deleter # с методом deleter то же самое
+    @my_balance.deleter # это my_balance = property(fdet=my_balance) с методом deleter то же самое
     def my_balance(self):
         print('del balance')
         del self.__balance

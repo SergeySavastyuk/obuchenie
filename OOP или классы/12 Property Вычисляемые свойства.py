@@ -24,15 +24,15 @@ class Square:
         return self.__area
 
 a1 = Square(6)
-print(a1.area()) # здесь вызываем метод area
+print(a1.area())   # 36 - здесь вызываем метод area
 a1 = Square(10)
-# print(a1.area2) # здесь вызываем свойство area2
+print(a1.area2)    # 100 - здесь вызываем свойство area2
 print('_'*50)
 a2 = Square(13)
-print(a2.__dict__)
-print(a2.area3)
-a2.side = 5  # Здесь ошибка т.к. мы сохраняем 5 и должны получить 25
-print(a2.__dict__)
+print(a2.__dict__) # {'side': 13, '_Square__area': None}
+print(a2.area3)    # None было заменено
+a2.side = 5        # Здесь ошибка т.к. мы сохраняем 5 и должны получить 25
+print(a2.__dict__) # {'side': 5, '_Square__area': 169}
 print(a2.area3) # а получаем 169, т.к. None больше нет, значит нужно сделать возврат None для этого
 print('_'*50)
 
@@ -60,8 +60,8 @@ class Square2:
 a3 = Square2(5)
 print(a3.__dict__)
 print(a3.area4) # 25
-print(a3.side) # 5  тут срабатывает свойство side с get
-a3.side = 6    #  тут уже срабатывает свойство side с методом set
+print(a3.side)  # 5  тут срабатывает свойство side с get
+a3.side = 6     #  тут уже срабатывает свойство side с методом set
 print(a3.area4) # 36
 print('*'*50)
 
@@ -88,13 +88,13 @@ class Perimeter:
         return self.__result
 
 b1 = Perimeter(2,4,3)
-print(b1.__dict__)
-print(b1.sides)
+print(b1.__dict__)  # {'_Perimeter__args': (4, 3), '_Perimeter__quantity_sides': 2, '_Perimeter__result': None}
+print(b1.sides)     # ((4, 3), 2)
 b1.sides = 1,4,
-print(b1.__dict__)
-print(b1.sides)
-print(b1.sum) # 10
+print(b1.__dict__)  # {'_Perimeter__args': (1, 4), '_Perimeter__quantity_sides': 2, '_Perimeter__result': None}
+print(b1.sides)     # ((1, 4), 2)
+print(b1.sum)       # 10
 b1.sides = 6,3
-print(b1.sum) # 18
+print(b1.sum)       # 18
 b2 = Perimeter(3,5)
-print(b2.sum) # 15
+print(b2.sum)       # 15

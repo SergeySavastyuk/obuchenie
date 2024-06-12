@@ -8,7 +8,7 @@ class Person:
     def __init__(self, name):
         self.__name = name
     @property
-    def name(self):            # метод стал геттером
+    def name(self):            # метод стал свойством геттером
         return self.__name
 person = Person("Vasya")
 print(person.name)  # Vasya
@@ -32,17 +32,17 @@ class Person:
     def name(self):            # геттер
         return self.__name
     @name.setter               # name - потому что, имя геттера - "name"
-    def name(self, value):      # имя метода такое же как и у геттера - "name"
+    def name(self, value):     # имя метода такое же как и у геттера - "name"
         self.__name = value
 person = Person("John")
 print(person.name) # John      # использовали геттер
 person.name = "Vasya"          # использовали сеттер
 print(person.name) # Vasya
 # В примере, мы создали геттер, с помощью декоратора @property. Далее создаём сеттер, с помощью @name.setter
-# и метода name, который имеет такое же имя как и у геттера (это важно). Внутри сеттера мы изменяем атрибут
+# и метода name, который имеет такое же имя, как и у геттера (это важно). Внутри сеттера мы изменяем атрибут
 # __name на значение аргумента value.
 
-# Обратите внимание что в декораторе @name.setter, name - это имя метода геттера, и это важно.
+# Обратите внимание, что в декораторе @name.setter, name - это имя метода геттера, и это важно.
 # Слово setter после точки - говорит о том, что этот декоратор создаёт сеттер.
 # Deleter (делитер)
 # Deleter - это метод, который удаляет защищённый или приватный атрибут. Он похож по синтаксису на сеттер,

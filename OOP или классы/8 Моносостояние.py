@@ -5,16 +5,17 @@ class Cat: # создадим приватный(__) словарь аттриб
         'breed':'pers',
         'color':'black'
     }
-    def __init__(self): # запускаем init (срабатывает при оздании экземпляра)
+    def __init__(self): # запускаем init (срабатывает при cоздании экземпляра)
         self.__dict__ = Cat.__shared_attr # приравниваем экземпляр.метод __dict__
         # (который показывает все аттрибуты объекта) к названию класса.его аттрибут (наш словарь)
 a = Cat()
 b = Cat()
 print(a.__dict__) # {'breed': 'pers', 'color': 'black'}
-b.breed = 'siam' # изменим один аттрибут в объекте
-print(a.__dict__) # {'breed': 'siam', 'color': 'black'} видно что в другом объекте этот аттрибут тоже изменился
-a.name = 'bob' # добавим новый аттрибут к экземпляру
-print(b.__dict__) # {'breed': 'siam', 'color': 'black', 'name': 'bob'}
+b.breed = 'siam' # изменим один аттрибут во втором объекте
+print(a.__dict__) # {'breed': 'siam', 'color': 'black'} видно, что и в первом объекте этот аттрибут тоже изменился
+a.name = 'bob' # добавим новый аттрибут к первом экземпляру
+print(b.__dict__) # {'breed': 'siam', 'color': 'black', 'name': 'bob'} - новый аттрибут появился и во втором экземпляре
+print(Cat._Cat__shared_attr) # {'breed': 'siam', 'color': 'black', 'name': 'bob'} - как и в самом классе
 
 
 

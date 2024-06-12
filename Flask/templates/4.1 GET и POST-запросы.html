@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GET и POST-запросы</title>
+</head>
+<body>
+<h1> GET и POST-запросы </h1>
+<p> Создание таких полей возможно благодаря html. Для этого обязательно задается тег < form> с указанием метода
+    POST или GET. Можно указать action, чтобы направить на другую страницу. Также необходим тег input с типом
+    submit – эта специальная кнопка говорит сайту, что данные нужно обработать на сервере.</p>
+    <p>- action оставляем пустым и после нажатия кнопки отобразится этажа таблица</p>
+    <p>- label отображает надпись для Input с именем Сообщение:</p>
+    <p>- input будет однострочным полем для ввода, тип текст, имя message</p>
+    <p>- submit кнопка для отправки данных на сервер</p>
+<form action="" method="post">
+    <label for="message"> Сообщение: </label>
+    <input type="text" name="message">
+    <p><input type="submit"></p>
+
+</form>
+</body>
+</html>

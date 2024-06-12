@@ -66,3 +66,16 @@ print(p4.__dict__) # {'x': 10, 'y': -5}
 print(f'расстояние между точками p4 и p5 равно {p4.calc_dist(p5)}')
 print(Point.list_point) # [<__main__.Point object at 0x00000000027856A0>, <__main__.Point object at 0x0000000002785640>]
 
+
+""" Проверка в __init__ c использованием статических методов"""
+class Algebra:
+    def __init__ (self, number):
+        self.number = self.parity_check(number)
+    @staticmethod
+    def parity_check(number):
+        if number%2==0:return number
+        return number+1
+a = Algebra(26)
+print(a.__dict__)
+a = Algebra(27)
+print(a.__dict__)

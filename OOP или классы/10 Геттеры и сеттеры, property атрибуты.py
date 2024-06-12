@@ -1,5 +1,5 @@
 """ Property. getter-метод и setter-метод
-методы позволяющие доставать и устанавливать значения приватных аттрибутов, а также свойство класса"""
+методы позволяющие доставать и устанавливать значения приватных аттрибутов, а также свойство класса (Property)"""
 
 class BankAccount:
     def __init__(self,name,balance):
@@ -9,8 +9,8 @@ class BankAccount:
     def get_balance(self): # метод возвращает значение приватного аттрибута
         return self.__balance
 
-    def set_balance(self,value): # метод проставляет значение в приватный аттрибут
-        if not isinstance(value,(int,float)): # сделаем е проверку чтобы не прошли НЕ числа
+    def set_balance(self,value): # метод проставляет/обновляет значение в приватном аттрибуте
+        if not isinstance(value,(int,float)): # сделаем проверку чтобы не прошли НЕ числа
             raise ValueError('balance должен быть числом')
         self.__balance = value
 
@@ -36,7 +36,7 @@ a1 = BankAccount('vasya',950)
 print(a1.get_balance())  # но можем обратиться к методу из класса, который вернёт нужное значение, а именно 950
 a1.set_balance(1050) # через другой метод установим новое значение приватному аттрибуту
 print(a1.get_balance()) # и при повторном запросе получим 1050
-# a1.set_balance('123')
+a1.set_balance('123')
 # print(a1.get_balance()) # ValueError: balance должен быть числом
 print('_'*20)
 
