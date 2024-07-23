@@ -15,8 +15,10 @@ class Lion:
 
 a = Lion('bob')
 print(a)  # <__main__.Lion object at 0x00000000029C6610> такой будет вид если не будет метода __repr__
+print()
 a.name = 'вася'
 print(a.__repr__())  # объект Lion - вася
+print()
 a.name = 'петя'
 print(a) # для красивого вывода срабатывает __repr__ при запуске команды print
 print(a.__str__())  # просто Lion - петя. Если метода __str__  не будет, то сработает метод __repr__, но не наоборот

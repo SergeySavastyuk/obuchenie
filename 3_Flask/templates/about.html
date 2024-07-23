@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'Jinja2.html' %} - таким образом импортируем нашу основную страницу
+
+{% block content %}
+{{ super() }} - здесь отображается код из основной страницы
+<hr>
+
+<p> содержимое страницы о сайте, то что добавили через расширение основной страницы</p>
+{% endblock %}
+</body>
+</html>

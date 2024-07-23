@@ -1,9 +1,11 @@
 pip install Django - установка пакета Django
 
-django-admin startproject название проекта - создание проекта Django
+
+создание проекта Django
+django-admin startproject название проекта
 
 
-запуск проекта через команду 
+запуск проекта через команду(обращаемся к файлу manage.py через программу python с командой runserver) 
 python manage.py runserver 
 
 выход через комбинацию Ctrl+c

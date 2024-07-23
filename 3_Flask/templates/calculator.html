@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+калькулятор
+
+{% if z == ':' and n2 == 0.0 %}
+Ошибка
+{% elif z == ':' %}
+{{ n1 / n2 }}
+
+{% elif z == '+' %}
+{{ n1 + n2 }}
+
+{% elif z == '-' %}
+{{ n1 - n2 }}
+
+{% elif z == '*' %}
+{{ n1 * n2 }}
+
+{% elif z == '**' %}
+{{ n1 ** n2 }}
+
+{% else %}
+Ошибка
+{%endif%}
+
+</body>
+</html>
